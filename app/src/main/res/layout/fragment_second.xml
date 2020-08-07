@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SecondFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp">
+
+            <EditText
+                android:id="@+id/animal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/animal1"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/animal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/animal2"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/animal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/animal3"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

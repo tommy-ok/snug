@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">snug</string>
+    <string name="user_name">お名前</string>
+    <string name="email">メールアドレス</string>
+    <string name="phone_num">電話番号</string>
+    <string name="animal1">動物の名前（１）</string>
+    <string name="animal2">動物の名前（２）</string>
+    <string name="animal3">動物の名前（３）</string>
 </resources>
