@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class SimpleDialogFragment: DialogFragment() {
 

@@ -44,7 +44,6 @@ class FirstFragment : Fragment() {
         user.name = nameField.text.toString()
         user.phone = phoneField.text.toString()
         user.mail = mailField.text.toString()
-
         // 保存（idが主キーなので、保存or更新）
         realm.executeTransactionAsync({ realm ->
             realm.copyToRealmOrUpdate(user)

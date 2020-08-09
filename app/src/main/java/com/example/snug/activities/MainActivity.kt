@@ -1,8 +1,9 @@
-package com.example.snug
+package com.example.snug.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sample.fragments.adapters.ViewPagerAdapter
+import com.example.snug.R
 import com.example.snug.fragments.FirstFragment
 import com.example.snug.fragments.SecondFragment
 import com.example.snug.fragments.SimpleDialogFragment
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         setUpTabs()
         setButtons()
     }
-
 
     private fun setUpTabs() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
@@ -57,6 +57,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }

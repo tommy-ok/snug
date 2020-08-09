@@ -28,24 +28,24 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        return inflater.inflate(R.layout.fragment_second, container,false)
     }
 
     override fun onStart() {
         super.onStart()
-
         // 最初に読み込みを行う
         this.load()
     }
 
     fun save() {
-        val drug = Animals()
-        drug.animal1 = animal1.text.toString()
-        drug.animal1 = animal2.text.toString()
-        drug.animal1 = animal3.text.toString()
+
+        val animal = Animals()
+        animal.animal1 = animal1.text.toString()
+        animal.animal2 = animal2.text.toString()
+        animal.animal3 = animal3.text.toString()
 
         realm.executeTransactionAsync({ realm ->
-            realm.copyToRealmOrUpdate(drug)
+            realm.copyToRealmOrUpdate(animal)
         }, {
             Toast.makeText(this.context, "保存しました。", Toast.LENGTH_SHORT).show()
         }, { error ->
@@ -54,9 +54,8 @@ class SecondFragment : Fragment() {
     }
 
     fun load() {
-        val drug = realm.where<Animals>().findFirst()
-        drug?.let {
-
+        val animal = realm.where<Animals>().findFirst()
+        animal?.let {
             animal1.setText(it.animal1, TextView.BufferType.NORMAL)
             animal2.setText(it.animal2, TextView.BufferType.NORMAL)
             animal3.setText(it.animal3, TextView.BufferType.NORMAL)
