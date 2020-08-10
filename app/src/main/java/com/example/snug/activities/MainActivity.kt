@@ -2,12 +2,13 @@ package com.example.snug.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.example.sample.fragments.adapters.ViewPagerAdapter
 import com.example.snug.R
-import com.example.snug.fragments.FirstFragment
-import com.example.snug.fragments.SecondFragment
-import com.example.snug.fragments.SimpleDialogFragment
+import com.example.snug.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_third.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(FirstFragment(), "ユーザー情報")
         adapter.addFragment(SecondFragment(), "好きな動物")
+        adapter.addFragment(ThirdFragment(), "WebView")
+        adapter.addFragment(FourthFragment(), "ローカルhtml")
+
         viewPager.adapter = adapter
         this.adapter = adapter
         tabs.setupWithViewPager(viewPager)
