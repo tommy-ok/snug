@@ -1,16 +1,16 @@
 package com.example.snug.activities
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import com.example.sample.fragments.adapters.ViewPagerAdapter
 import com.example.snug.R
 import com.example.snug.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_third.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SimpleDialogFragment.SimpleDialogListener {
 
     private lateinit var adapter: ViewPagerAdapter
 
@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         setUpTabs()
         setButtons()
+
     }
 
     private fun setUpTabs() {
@@ -38,21 +39,10 @@ class MainActivity : AppCompatActivity() {
         save.setOnClickListener {
             val dialog = SimpleDialogFragment()
             dialog.show(supportFragmentManager, "simple")
-
-            val currentFragment = adapter.getItem(viewPager.currentItem)
-            when (currentFragment) {
-                is FirstFragment -> {
-                    currentFragment.save()
-                }
-                is SecondFragment -> {
-                    currentFragment.save()
-                }
-            }
         }
 
         load.setOnClickListener {
-            val currentFragment = adapter.getItem(viewPager.currentItem)
-            when (currentFragment) {
+            when (val currentFragment = adapter.getItem(viewPager.currentItem)) {
                 is FirstFragment -> {
                     currentFragment.load()
                 }
@@ -62,4 +52,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onDialogPositiveClick(dialog: DialogFragment) {
+        when (val currentFragment = adapter.getItem(viewPager.currentItem)) {
+            is FirstFragment -> {
+                currentFragment.save()
+            }
+            is SecondFragment -> {
+                currentFragment.save()
+            }
+        }
+    }
+
+    override fun onDialogNegativeClick(dialog: DialogFragment) {
+        Toast.makeText(applicationContext, "キャンセルが押されました", Toast.LENGTH_LONG).show()
+
+    }
 }
+

@@ -19,7 +19,6 @@ class ThirdFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_third, container, false)
         val mWebView = v.findViewById<View>(R.id.webView) as WebView
         mWebView.loadUrl("https://developer.android.com/")
-    // Inflate the layout for this fragment
     return v
     }
 }

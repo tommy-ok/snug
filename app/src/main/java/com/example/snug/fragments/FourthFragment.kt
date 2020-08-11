@@ -20,7 +20,7 @@ class FourthFragment: androidx.fragment.app.Fragment() {
 
         myWebView.settings.javaScriptEnabled = true
 
-        myWebView.loadUrl("file://android_assets/index.html")
+        myWebView.loadUrl("src/main/assets/index.html")
 
         return view
     }
