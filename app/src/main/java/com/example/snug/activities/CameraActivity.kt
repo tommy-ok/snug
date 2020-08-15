@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.snug.R
-import kotlinx.android.synthetic.main.activity_fifth.*
 
 class CameraActivity: AppCompatActivity() {
 
@@ -30,5 +29,6 @@ class CameraActivity: AppCompatActivity() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(intent, 200)
     }
+
 
 }

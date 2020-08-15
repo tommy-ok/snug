@@ -9,4 +9,4 @@
     android:onClick="onCameraImageClick"
     android:layout_gravity="center"
     app:srcCompat = "@android:drawable/ic_menu_camera"
-    tools:context=".activities.CameraActivity"/>
+    tools:context=".activities.MainActivity"/>

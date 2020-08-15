@@ -1,8 +1,13 @@
 package com.example.snug.activities
 
 
+import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.sample.fragments.adapters.ViewPagerAdapter
@@ -29,7 +34,6 @@ class MainActivity : AppCompatActivity(), SimpleDialogFragment.SimpleDialogListe
         adapter.addFragment(SecondFragment(), "好きな動物")
         adapter.addFragment(ThirdFragment(), "WebView")
         adapter.addFragment(FourthFragment(), "ローカルhtml")
-
         viewPager.adapter = adapter
         this.adapter = adapter
         tabs.setupWithViewPager(viewPager)

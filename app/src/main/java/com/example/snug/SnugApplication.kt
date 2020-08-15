@@ -1,4 +1,4 @@
-package com.example.snug.realm
+package com.example.snug
 
 import android.app.Application
 import io.realm.Realm
